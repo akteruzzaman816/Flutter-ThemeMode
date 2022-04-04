@@ -24,12 +24,14 @@ class _HomePageState extends State<HomePage> {
             Switch(
               value: _value,
               onChanged: (value){
-                _value = value;
-                if(_value){
-                  MyApp.of(context)?.changeTheme(ThemeMode.dark);
-                }else{
-                  MyApp.of(context)?.changeTheme(ThemeMode.light);
-                }
+                setState(() {
+                  _value = value;
+                  if(_value){
+                    MyApp.of(context)?.changeTheme(ThemeMode.dark);
+                  }else{
+                    MyApp.of(context)?.changeTheme(ThemeMode.light);
+                  }
+                });
               },
             )
           ],
